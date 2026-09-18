@@ -35,20 +35,22 @@ st.divider()
 
 ac_units = st.number_input(
     "Enter AC Units",
-    min_value=1.0,
+    min_value=0.0,
     value=10.0,
     step=1.0
 )
 
 
 if st.button("Predict Electric Bill", type="primary"):
-
-    new_data = pd.DataFrame({
-        "AC_Units": [ac_units]
-    })
-
-    prediction = model.predict(new_data)[0]
-
+    if ac_units ==0:
+        prediction = 0
+    else:
+        new_data = pd.DataFrame({
+            "AC_Units": [ac_units]
+        })
+    
+        prediction = model.predict(new_data)[0]
+    
     st.success(
-        f"Predicted Electric Bill: ₹{prediction:,.2f}"
+            f"Predicted Electric Bill: ₹{prediction:,.2f}"
     )
