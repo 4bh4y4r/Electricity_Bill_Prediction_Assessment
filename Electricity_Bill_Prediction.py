@@ -35,7 +35,7 @@ st.divider()
 
 ac_units = st.number_input(
     "Enter AC Units",
-    min_value=0.0,
+    min_value=1.0,
     value=10.0,
     step=1.0
 )
