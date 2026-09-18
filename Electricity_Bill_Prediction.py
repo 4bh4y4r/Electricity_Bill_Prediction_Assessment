@@ -19,12 +19,11 @@ model = load_model()
 
 st.set_page_config(
     page_title="Electric Bill Prediction",
-    page_icon="⚡",
     layout="centered"
 )
 
 
-st.title("⚡ Electric Bill Prediction")
+st.title("Electric Bill Prediction")
 
 st.write("Polynomial Regression Model")
 
